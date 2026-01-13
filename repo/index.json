@@ -2,7 +2,8 @@
     "registeredrepos": {
         "warpix": {
             "name": "Warpix",
-            "root": "https://warpix.rivergames.ca/repo/warpix/default/"
+            "root": "https://warpix.rivergames.ca/repo/warpix/default/",
+            "index": "https://warpix.rivergames.ca/repo/warpix/default/index.json"
         }
     }
 }
