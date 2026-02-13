@@ -1,8 +1,0 @@
-{
-    "id": "test",
-    "installedname": "test",
-    "filetype": "shellscript",
-    "name": "Test Program for Warpix",
-    "version": "1.0.0",
-    "description": "This is a test program for Warpix."
-}
