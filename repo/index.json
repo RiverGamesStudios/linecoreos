@@ -1,8 +1,8 @@
 {
     "registeredrepos": {
-        "warpix": {
-            "root": "https://warpix.rivergames.ca/repo/warpix/default/",
-            "index": "https://warpix.rivergames.ca/repo/warpix/default/index.json"
+        "linecoreos": {
+            "root": "https://linecoreos.rivergames.ca/repo/linecoreos/default/",
+            "index": "https://linecoreos.rivergames.ca/repo/linecoreos/default/index.json"
         }
     }
 }
