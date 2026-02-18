@@ -1,0 +1,79 @@
+name: directory-listing
+on:
+  push:
+    branches:
+      - web
+
+jobs:
+  generate-directory-listing:
+    runs-on: ubuntu-latest
+    name: Generate and Commit grabdirectory.html
+    steps:
+      - name: Checkout web branch
+        uses: actions/checkout@v4
+        with:
+          ref: web
+
+      - name: Generate grabdirectory.html from index.json
+        run: |
+          python3 - <<'EOF'
+          import json
+
+          with open("repo/index.json") as f:
+              data = json.load(f)
+
+          repos = data.get("registeredrepos", {})
+
+          rows = ""
+          for name, info in repos.items():
+              rows += f"""
+              <tr>
+                <td>{name}</td>
+                <td><a href="{info['root']}">{info['root']}</a></td>
+                <td><a href="{info['manifest']}">{info['manifest']}</a></td>
+              </tr>"""
+
+          html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Package Registry</title>
+            <style>
+              body {{ font-family: monospace; background: #0d1117; color: #c9d1d9; padding: 2rem; }}
+              h1 {{ color: #58a6ff; }}
+              table {{ width: 100%; border-collapse: collapse; margin-top: 1rem; }}
+              th {{ text-align: left; border-bottom: 1px solid #30363d; padding: 0.5rem 1rem; color: #8b949e; }}
+              td {{ padding: 0.5rem 1rem; border-bottom: 1px solid #21262d; }}
+              a {{ color: #58a6ff; text-decoration: none; }}
+              a:hover {{ text-decoration: underline; }}
+            </style>
+          </head>
+          <body>
+            <h1>📦 Package Registry</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Package</th>
+                  <th>Root</th>
+                  <th>Manifest</th>
+                </tr>
+              </thead>
+              <tbody>{rows}</tbody>
+            </table>
+          </body>
+          </html>"""
+
+          with open("grabdirectory.html", "w") as f:
+              f.write(html)
+
+          print("grabdirectory.html generated successfully")
+          EOF
+
+      - name: Commit and push grabdirectory.html
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add grabdirectory.html
+          git diff --cached --quiet || git commit -m "chore: update grabdirectory.html [skip ci]"
+          git push origin web
