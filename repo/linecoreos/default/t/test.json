@@ -1,0 +1,9 @@
+{
+    "name": "test",
+    "fancyname": "Test Program",
+    "description": "A program for testing",
+    "dependencies": [],
+    "version": "1.00",
+    "minosversion": "0.1.0.2173",
+    "alias": {"trigger": "test","description": "A simple grab test program","usage": "test"}
+}
