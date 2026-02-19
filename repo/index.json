@@ -1,8 +1,8 @@
 {
     "registeredrepos": {
         "linecoreos": {
-            "root": "https://linecoreos.rivergames.ca/repo/linecoreos/default/",
-            "manifest": "https://linecoreos.rivergames.ca/repo/linecoreos/default/manifest.json"
+            "root": "http://localhost:9089/repo/linecoreos/default/",
+            "manifest": "http://localhost:9089/repo/linecoreos/default/manifest.json"
         }
     }
 }

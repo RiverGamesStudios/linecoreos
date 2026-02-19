@@ -275,7 +275,7 @@ main {
 /* ── STATS ROW ── */
 .stats-row {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid #333;
 }
 
@@ -429,7 +429,7 @@ tbody td:last-child {
 /* ── INSTALL ── */
 .install-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .install-col {
