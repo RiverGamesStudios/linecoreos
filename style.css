@@ -426,7 +426,7 @@ tbody td:last-child {
     white-space: nowrap;
 }
 
-/* ── INSTALL ── */
+/* ── INSTALL. ── */
 .install-grid {
     display: grid;
     grid-template-columns: 1fr;

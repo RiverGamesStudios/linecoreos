@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packages - LineCoreOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="icon" content="favicon.png">
+    <style>
+        .search-container {
+            padding: 1rem 2rem;
+            border-bottom: 1px solid #333;
+            background: #0a0a0a;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px 12px;
+            background: #000;
+            border: 1px solid #333;
+            color: #ccc;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP STATUS BAR -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>LineCoreOS v0.1.0.2173</span>
+            <span>LineKernel 1.0.0</span>
+            <span>LineShell 1.0.0</span>
+            <span>LineFS Revision 1</span>
+        </div>
+        <div class="topbar-right">
+            <span>grab/1 pkgs</span>
+            <span id="clock">--:--:--</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo"><a href="index.html">LineCoreOS</a></div>
+        <ul class="nav-links">
+            <li><a href="#">docs</a></li>
+            <li><a href="packages.html">packages</a></li>
+            <li><a href="#">community</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+        <div class="nav-right"><a href="downloads.html">Download LineCoreOS</a></div>
+    </nav>
+
+    <main>
+        <div class="section" style="margin-top: 56px;">
+            <div class="section-bar">
+                <span class="tab-link on" data-tab="pkg-list">PACKAGES</span>
+            </div>
+
+            <div class="search-container">
+                <input type="text" id="pkg-search" class="search-input"
+                    placeholder="Search packages by name, description, or author...">
+            </div>
+
+            <div id="pkg-list" class="tab-content active">
+                <table id="pkg-table">
+                    <thead>
+                        <tr>
+                            <td>PACKAGE NAME</td>
+                            <td>FANCY NAME</td>
+                            <td>VERSION</td>
+                            <td>MIN OS VER</td>
+                            <td>AUTHOR</td>
+                            <td>DESCRIPTION</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-id">ldx</td>
+                            <td class="col-name">Line Desktop Extension</td>
+                            <td class="col-ver">1.00</td>
+                            <td class="col-ver">0.1.0.2173</td>
+                            <td class="col-id">rivergames</td>
+                            <td class="col-desc">A desktop environment for LineCoreOS.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">neofetch-line</td>
+                            <td class="col-name">Neofetch (Line)</td>
+                            <td class="col-ver">7.1.0</td>
+                            <td class="col-ver">0.1.0.2000</td>
+                            <td class="col-id">community</td>
+                            <td class="col-desc">A CLI system information tool written in BASH.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">vim-tiny</td>
+                            <td class="col-name">Vim Tiny</td>
+                            <td class="col-ver">8.2</td>
+                            <td class="col-ver">0.0.9</td>
+                            <td class="col-id">vimteam</td>
+                            <td class="col-desc">A minimal version of the Vim text editor.</td>
+                        </tr>
+                         <tr>
+                            <td class="col-id">netline</td>
+                            <td class="col-name">NetLine</td>
+                            <td class="col-ver">0.5.2</td>
+                            <td class="col-ver">0.1.0.2100</td>
+                            <td class="col-id">rivergames</td>
+                            <td class="col-desc">Network configuration utility for LineCoreOS.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-left">
+                <span>LineCoreOS -- Source Available</span>
+                <span>(c) 2025 LineCoreOS Project</span>
+                <span>v0.9.4 stable</span>
+            </div>
+            <div>
+                <a href="https://github.com/rivergamesstudios/linecoreos">GitHub</a>
+                <a href="#">Docs</a>
+                <a href="#">Forum</a>
+                <a href="#">IRC</a>
+                <a href="#">License</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function tick() {
+            document.getElementById('clock').textContent =
+                new Date().toTimeString().slice(0, 8);
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        // Search Logic
+        const searchInput = document.getElementById('pkg-search');
+        const table = document.getElementById('pkg-table');
+        const rows = table.getElementsByTagName('tr');
+
+        searchInput.addEventListener('keyup', function () {
+            const filter = searchInput.value.toLowerCase();
+
+            // Start from 1 to skip header
+            for (let i = 1; i < rows.length; i++) {
+                const cells = rows[i].getElementsByTagName('td');
+                let found = false;
+
+                for (let j = 0; j < cells.length; j++) {
+                    const cellText = cells[j].textContent || cells[j].innerText;
+                    if (cellText.toLowerCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (found) {
+                    rows[i].style.display = "";
+                } else {
+                    rows[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
