@@ -1,0 +1,10 @@
+{
+    "name": "fetch",
+    "fancyname": "LineFetch",
+    "description": "A simple fetch application, think neofetch but for LineCoreOS",
+    "author": "Cole Bohte",
+    "dependencies": [],
+    "version": "1.00",
+    "minosversion": "0.1.0.2173",
+    "alias": {"trigger": "fetch","description": "A simple fetch application like neofetch","usage": "fetch"}
+}
