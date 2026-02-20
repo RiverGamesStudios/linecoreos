@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Changelog - LineCoreOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- TOP STATUS BAR -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>LineCoreOS v0.1.0.XXXX</span>
+            <span>LineKernel 1.0.0</span>
+            <span>LineShell 1.0.0</span>
+            <span>LineFS Revision 1</span>
+        </div>
+        <div class="topbar-right">
+            <span>grab/1 pkgs</span>
+            <span id="clock">--:--:--</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo"><a href="/">LineCoreOS</a></div>
+        <ul class="nav-links">
+            <li><a href="#">docs</a></li>
+            <li><a href="packages.html">packages</a></li>
+            <li><a href="#">community</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+        <div class="nav-right"><a href="#">Download LineCoreOS</a></div>
+    </nav>
+
+    <main>
+        <div class="section" style="margin-top: 56px;">
+            <div class="section-bar">
+                <span class="tab-link on" data-tab="latest">Latest (0.1.0.XXXX)</span>
+            </div>
+
+            <!-- v0.10.0 (Latest) -->
+            <div id="latest" class="tab-content active">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>TYPE</td>
+                            <td>COMPONENT</td>
+                            <td>CHANGE DESCRIPTION</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-tag">FEATURE</td>
+                            <td class="col-name">LineShell</td>
+                            <td class="col-desc">Added "compat" command for enhanced legacy binary support.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-tag">UPDATE</td>
+                            <td class="col-name">Grab</td>
+                            <td class="col-desc">Improved JSON parsing speed by 40% for large registries.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-tag">FIX</td>
+                            <td class="col-name">LineKernel</td>
+                            <td class="col-desc">Resolved a race condition during early boot on x86_64 hardware.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-left">
+                <span>LineCoreOS -- Source Available</span>
+                <span>(c) 2025 LineCoreOS Project</span>
+            </div>
+            <div>
+                <a href="https://github.com/rivergamesstudios/linecoreos">GitHub</a>
+                <a href="#">Docs</a>
+                <a href="#">License</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function tick() {
+            document.getElementById('clock').textContent =
+                new Date().toTimeString().slice(0, 8);
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        // Tab Switching Logic
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const section = link.closest('.section');
+                const tabId = link.getAttribute('data-tab');
+
+                // Update tab links
+                section.querySelectorAll('.tab-link').forEach(l => l.classList.remove('on'));
+                link.classList.add('on');
+
+                // Update tab content
+                section.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                section.querySelector(`#${tabId}`).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>

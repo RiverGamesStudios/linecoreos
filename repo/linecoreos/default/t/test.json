@@ -1,0 +1,10 @@
+{
+    "name": "test",
+    "fancyname": "Test Program",
+    "description": "A program for testing Grab and HTTPS Pull Requests",
+    "author": "rivergames",
+    "dependencies": [],
+    "version": "1.01",
+    "minosversion": "0.1.0.2173",
+    "alias": {"trigger": "test","description": "A program for testing Grab and HTTPS Pull Requests","usage": "test"}
+}

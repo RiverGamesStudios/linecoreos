@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Downloads - LineCoreOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="icon" content="favicon.png">
+</head>
+
+<body>
+
+    <!-- TOP STATUS BAR -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>LineCoreOS v0.1.0.XXXX</span>
+            <span>LineKernel 1.0.0</span>
+            <span>LineShell 1.0.0</span>
+            <span>LineFS Revision 1</span>
+        </div>
+        <div class="topbar-right">
+            <span>grab/1 pkgs</span>
+            <span id="clock">--:--:--</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo"><a href="index.html">LineCoreOS</a></div>
+        <ul class="nav-links">
+            <li><a href="#">docs</a></li>
+            <li><a href="packages.html">packages</a></li>
+            <li><a href="#">community</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+        <div class="nav-right"><a href="downloads.html">Download LineCoreOS</a></div>
+    </nav>
+
+    <main>
+        <div class="section" style="margin-top: 56px;">
+            <div class="section-bar">
+                <span class="tab-link on" data-tab="downloads-list">DOWNLOADS</span>
+            </div>
+
+            <div id="downloads-list" class="tab-content active">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>VERSION</td>
+                            <td>STATUS</td>
+                            <td>RELEASE DATE</td>
+                            <td>DESCRIPTION</td>
+                            <td style="text-align:right">DOWNLOAD</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-name">v0.1.0.XXXX</td>
+                            <td class="col-tag">prerelease</td>
+                            <td class="col-ver">2025-02-17</td>
+                            <td class="col-desc">Obsidian Prerelease 0. Initial public preview.</td>
+                            <td style="text-align:right"><a href="#" class="btn">GitHub Releases</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-left">
+                <span>LineCoreOS -- Source Available</span>
+                <span>(c) 2025 LineCoreOS Project</span>
+            </div>
+            <div>
+                <a href="https://github.com/rivergamesstudios/linecoreos">GitHub</a>
+                <a href="#">Docs</a>
+                <a href="#">License</a>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        function tick() {
+            document.getElementById('clock').textContent =
+                new Date().toTimeString().slice(0, 8);
+        }
+        tick();
+        setInterval(tick, 1000);
+    </script>
+
+</body>
+
+</html>

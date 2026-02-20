@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LineCoreOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="icon" content="favicon.png">
+</head>
+
+<body>
+
+    <!-- TOP STATUS BAR -->
+    <div class="topbar">
+        <div class="topbar-left">
+            <span>LineCoreOS v0.1.0.XXXX</span>
+            <span>LineKernel 1.0.0</span>
+            <span>LineShell 1.0.0</span>
+            <span>LineFS Revision 1</span>
+        </div>
+        <div class="topbar-right">
+            <span>grab/1 pkgs</span>
+            <span id="clock">--:--:--</span>
+        </div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-logo">LineCoreOS</div>
+        <ul class="nav-links">
+            <li><a href="#">docs</a></li>
+            <li><a href="packages.html">packages</a></li>
+            <li><a href="#">community</a></li>
+            <li><a href="#">blog</a></li>
+        </ul>
+        <div class="nav-right"><a href="downloads.html">Download LineCoreOS</a></div>
+    </nav>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero">
+            <!-- left -->
+            <div class="pane">
+                <div class="pane-bar">
+                    <span class="title">OVERVIEW</span>
+                    <span>LineCoreOS / home</span>
+                </div>
+                <div class="pane-body">
+                    <pre class="ascii-art">
+ _     _             ____
+| |   (_)_ __   ___ / ___|___  _ __ ___
+| |   | | '_ \ / _ \ |   / _ \| '__/ _ \
+| |___| | | | |  __/ |__| (_) | | |  __/
+|_____|_|_| |_|\___|\____\___/|_|  \___|  OS
+</pre>
+                    <div class="tag-line">
+                        v0.1.0.XXXX (Obsidian Prerelease 0) | rel: 2025-02-17 | [PRERELEASE]
+                    </div>
+                    <div class="headline">
+                        Made in Scratch,<br>
+                        Just the Line.
+                    </div>
+                    <div class="blurb">
+                        An OS built entirely in Scratch. LineKernel,
+                        LineShell, LineFS, and Grab -- built from
+                        scratch, in scratch.
+                        No compromises.
+                    </div>
+                    <div class="actions">
+                        <a href="#" class="btn btn-inv">&gt; Download</a>
+                        <a href="#" class="btn">Documentation</a>
+                        <a href="changelog.html" class="btn">Changelog</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right: terminal -->
+            <div class="pane">
+                <div class="pane-bar">
+                    <span class="title">TERMINAL -- LineShell 1.0.1</span>
+                    <span>80x36</span>
+                </div>
+                <div class="term-body">
+                    <div><span class="mid">setupuser | /home/setupuser/@SYSTEM : </span> <span
+                            class="bold">sysinfo</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="dim"> OS </span><span class="lit">LineCoreOS 0.1.0.XXXX (Obsidian Prerelease
+                            0)</span></div>
+                    <div><span class="dim"> Kernel </span><span class="lit">LineKernel 1.0.0</span></div>
+                    <div><span class="dim"> Shell </span><span class="lit">LineShell 1.0.1</span></div>
+                    <div><span class="dim"> FS </span><span class="lit">LineFS Revision 1</span></div>
+                    <div><span class="dim"> Packages </span><span class="lit">1 installed (Grab)</span></div>
+                    <div><span class="dim"> Uptime </span><span class="lit">2h 14m</span></div>
+                    <div><span class="dim"> Memory </span><span class="lit">38 MiB / 16384 MiB</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="mid">setupuser | /home/setupuser/ @ SYSTEM : </span> <span class="bold">grab
+                            search ldx</span></div>
+                    <div><span class="dim">Searching for repo item "ldx"</span></div>
+                    <div><span class="lit">Found "ldx" in repo "https://linecoreos.rivergames.ca/repo"</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="lit">Line Desktop Extension</span></div>
+                    <div><span class="lit">A desktop environment for LineCoreOS</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="lit">Version: </span><span class="lit">1.00</span></div>
+                    <div><span class="lit">Minimum OS Version: </span><span class="lit">0.1.0.XXXX</span></div>
+                    <div><span class="lit">Dependencies: </span><span class="lit">lwr, sservice</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="mid">setupuser | /home/setupuser/ @ SYSTEM : </span> <span class="bold">grab
+                            install ldx</span></div>
+                    <div><span class="dim">Searching for repo item "ldx"</span></div>
+                    <div><span class="dim">Checking dependencies...</span></div>
+                    <div><span class="dim">Installing dependencies...</span></div>
+                    <div><span class="dim">Checking packages to install...</span></div>
+                    <div><span class="lit">Installing "ldx"...</span></div>
+                    <div><span class="dim">Installed package "ldx" successfully</span></div>
+                    <div>&nbsp;</div>
+                    <div><span class="mid">setupuser | /home/setupuser/ @ SYSTEM : </span> <span
+                            class="blink-cursor"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <div class="stats-row">
+            <div class="stat-cell"><span class="k">size</span><span class="v">idk MB</span></div>
+            <div class="stat-cell"><span class="k">boot time</span><span class="v">~3s</span></div>
+            <div class="stat-cell"><span class="k">grab packages</span><span class="v">1</span></div>
+        </div>
+
+        <!-- COMPONENTS -->
+        <div class="section" id="section-components">
+            <div class="section-bar">
+                <span class="tab-link on" data-tab="comp-list">COMPONENTS</span>
+                <span class="tab-link" data-tab="feat-list">FEATURES</span>
+            </div>
+            <div id="comp-list" class="tab-content active">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>NAME</td>
+                            <td>DESCRIPTION</td>
+                            <td style="text-align:right">TYPE</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-id">CMP-01</td>
+                            <td class="col-name">LineShell</td>
+                            <td class="col-desc">Original shell built for LineCoreOS. Simple input systems, stored in
+                                /devices/keyboards/input. Easy to use and customize.</td>
+                            <td class="col-tag">inbuilt</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">CMP-02</td>
+                            <td class="col-name">Grab</td>
+                            <td class="col-desc">The LineCoreOS package manager. grab install, grab remove, grab verify.
+                                Easy, JSON based and fast.</td>
+                            <td class="col-tag">core</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">CMP-03</td>
+                            <td class="col-name">LineKernel</td>
+                            <td class="col-desc">The backbones of LineCoreOS, not based around anything other than our
+                                own thoughts.</td>
+                            <td class="col-tag">original</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">CMP-04</td>
+                            <td class="col-name">LineFS</td>
+                            <td class="col-desc">A filesystem designed around how LineCoreOS actually works.</td>
+                            <td class="col-tag">native</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="feat-list" class="tab-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>NAME</td>
+                            <td>DESCRIPTION</td>
+                            <td style="text-align:right">TYPE</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-id">FTR-01</td>
+                            <td class="col-name">Console by Default</td>
+                            <td class="col-desc">LineCoreOS boots to the console by default, no GUI, no bloat. Just the
+                                tools you need to get the job done.</td>
+                            <td class="col-tag">core</td>
+                        </tr>
+                        <tr>
+                            <td class="col-id">FTR-02</td>
+                            <td class="col-name">Malware Free</td>
+                            <td class="col-desc">The Grab repository is maintained and reviewed by our team at River
+                                Games, we make sure no malware gets past.</td>
+                            <td class="col-tag">default</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- INSTALLATION -->
+        <div class="section" id="section-install">
+            <div class="section-bar">
+                <span class="tab-link on" data-tab="install-guide">INSTALLATION</span>
+                <span class="tab-link" data-tab="req-list">REQUIREMENTS</span>
+                <span class="tab-link" data-tab="trouble-list">TROUBLESHOOTING</span>
+            </div>
+            <div id="install-guide" class="tab-content active">
+                <div class="install-grid">
+                    <div class="install-col">
+                        <div class="step">
+                            <span class="step-n">[1]</span>
+                            <div>
+                                <h4>Get LineCoreOS</h4>
+                                <p>Download the latest stable build.</p>
+                                <code><a href="downloads.html">Download Here</a></code>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-n">[2]</span>
+                            <div>
+                                <h4>Extract Zip</h4>
+                                <p>Extract using any zip program.</p>
+                                <code>unzip linecoreos.zip</code>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <span class="step-n">[3]</span>
+                            <div>
+                                <h4>Run linecoreos</h4>
+                                <p>Boot LineCoreOS in seconds after starting.</p>
+                                <code>./linecoreos</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="req-list" class="tab-content">
+                <div style="padding: 2rem; color: #888; font-size: 12px; line-height: 2;">
+                    <p style="color: #ccc; font-weight: bold; margin-bottom: 0.5rem;">MINIMUM REQUIREMENTS</p>
+                    <p>> CPU: x86_64 compatible</p>
+                    <p>> RAM: 2 GiB (8GiB recommended)</p>
+                    <p>> STORAGE: 1 GiB free space</p>
+                    <p>> NETWORK: For grab package installation</p>
+                </div>
+            </div>
+            <div id="trouble-list" class="tab-content">
+                <div style="padding: 2rem; color: #888; font-size: 12px; line-height: 2;">
+                    <p style="color: #ccc; font-weight: bold; margin-bottom: 0.5rem;">COMMON ISSUES</p>
+                    <p>> Black screen: Reboot and hold the [R] key. This will reset your mount but you will lose all saved data.</p>
+                    <p>> Grab failure: Verify internet connection via netline.</p>
+                    <p>> ADO not working: Verify that your user account has a password tied to it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PACKAGES -->
+        <div class="section">
+            <div class="section-bar">
+                <span class="on">RECENT GRAB PACKAGES -- grab registry (1 total)</span>
+                <span style="margin-left:auto; color:#333;">grab search &lt;name&gt;</span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>NAME</td>
+                        <td>VERSION</td>
+                        <td>DESCRIPTION</td>
+                        <td>STATUS</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-id" style="width:40px">001</td>
+                        <td class="col-name">fetch</td>
+                        <td class="col-ver">1.00</td>
+                        <td class="col-desc">A simple fetch application, think neofetch but for LineCoreOS</td>
+                        <td class="col-sta">stable</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id" style="width:40px">002</td>
+                        <td class="col-name">fetch</td>
+                        <td class="col-ver">1.00</td>
+                        <td class="col-desc">A Test Program for Grab & LineCoreOS</td>
+                        <td class="col-sta">stable</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- PHILOSOPHY -->
+        <div class="section">
+            <div class="section-bar">
+                <span class="on">PHILOSOPHY -- why LineCoreOS exists</span>
+            </div>
+            <div class="phil-grid">
+                <div class="phil-cell">
+                    <div class="phil-n">// 01</div>
+                    <div class="phil-h">Made from scratch in scratch.</div>
+                    <div class="phil-body">LineCoreOS is an original operating system made entirely in scratch. Yes, the
+                        crappy kids "programming language". But it works, and it's functional. The only thing that isn't
+                        written in scratch is this website, and the Grab repository.
+                    </div>
+                </div>
+                <div class="phil-cell">
+                    <div class="phil-n">// 02</div>
+                    <div class="phil-h">The console is the interface.</div>
+                    <div class="phil-body">Most OSes treat the terminal as a fallback for when the GUI breaks.
+                        LineCoreOS disagrees. The console is the primary interface -- the only interface by default.
+                        It is probably the best interface in our opinion.
+                    </div>
+                </div>
+                <div class="phil-cell">
+                    <div class="phil-n">// 03</div>
+                    <div class="phil-h">Small by design. Not by accident.</div>
+                    <div class="phil-body">LineCoreOS is a minimal operating system. 38 MB base image. Not a goal we
+                        aimed for -- a result of only shipping what is necessary. LineKernel, LineShell, LineFS, Grab.
+                        Four things. That is the whole OS. Every component has to justify its existence.</div>
+                </div>
+                <div class="phil-cell">
+                    <div class="phil-n">// 04</div>
+                    <div class="phil-h">Transparency over magic.</div>
+                    <div class="phil-body">Everything is visible and auditable. Every process, every config, every
+                        dependency. We do not make decisions on your behalf. We give you tools sharp enough to make them
+                        yourself -- then get out of the way.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="cta">
+            <div class="cta-comment">// ready to run it?</div>
+            <div class="cta-h">Download. Extract. Boot.<br>That's it.</div>
+            <div class="cta-sub">LineCoreOS v0.1.0.XXXX (Obsidian Prerelease 0) -- prerelease</div>
+            <div class="cta-prompt">
+                <span class="p">user@linecoreos:~$</span> grab install compat <span class="blink-cursor"></span>
+            </div>
+            <div class="cta-btns">
+                <a href="#" class="btn btn-inv">&gt; Download v0.10.0</a>
+                <a href="changelog.html" class="btn">View Changelog</a>
+                <a href="#" class="btn">Read the Docs</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-left">
+                <span>LineCoreOS -- Source Available</span>
+                <span>(c) 2025 LineCoreOS Project</span>
+            </div>
+            <div>
+                <a href="https://github.com/rivergamesstudios/linecoreos">GitHub</a>
+                <a href="#">Docs</a>
+                <a href="#">License</a>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        function tick() {
+            document.getElementById('clock').textContent =
+                new Date().toTimeString().slice(0, 8);
+        }
+        tick();
+        setInterval(tick, 1000);
+
+        // Tab Switching Logic
+        document.querySelectorAll('.tab-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const section = link.closest('.section');
+                const tabId = link.getAttribute('data-tab');
+
+                // Update tab links
+                section.querySelectorAll('.tab-link').forEach(l => l.classList.remove('on'));
+                link.classList.add('on');
+
+                // Update tab content
+                section.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                section.querySelector(`#${tabId}`).classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
