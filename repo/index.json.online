@@ -1,8 +1,0 @@
-{
-    "registeredrepos": {
-        "linecoreos": {
-            "root": "https://linecoreos.rivergames.ca/repo/linecoreos/default/",
-            "manifest": "https://linecoreos.rivergames.ca/repo/linecoreos/default/manifest.json"
-        }
-    }
-}
