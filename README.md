@@ -1,2 +1,2 @@
-# warpix
-Warpix, A Unix Inspired OS Written Entirely in PenguinMod Scratch
+# LineCoreOS
+A terminal based Operating System, written entirely in Turbowarp Scratch.
