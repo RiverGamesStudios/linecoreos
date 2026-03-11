@@ -1,0 +1,10 @@
+{
+    "name": "iwr",
+    "fancyname": "Invoke Web Request",
+    "description": "A simple web request program",
+    "author": "Cole Bohte",
+    "dependencies": [],
+    "version": "1.00",
+    "minosversion": "0.1.0.2173",
+    "alias": {"trigger": "iwr","description": "A simple web request program","usage": "Use 'iwr' for information on how to use."}
+}

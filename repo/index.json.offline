@@ -1,0 +1,8 @@
+{
+    "registeredrepos": {
+        "linecoreos": {
+            "root": "http://localhost:9089/repo/linecoreos/default/",
+            "manifest": "http://localhost:9089/repo/linecoreos/default/manifest.json"
+        }
+    }
+}
