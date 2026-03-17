@@ -1,0 +1,11 @@
+{
+    "name": "openrender",
+    "fancyname": "OpenRender",
+    "description": "An alternative text renderer for LineCoreOS.",
+    "author": "Cole Bohte",
+    "dependencies": ["openrender-prompt"],
+    "version": "1.00",
+    "minosversion": "0.1.0.3439",
+    "installinstructions": "Run 'openrender enable' to enable OpenRender.",
+    "alias": {"trigger": "openrender","description": "An alternative text renderer for LineCoreOS.","usage": "openrender <enable/disable>"}
+}

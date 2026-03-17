@@ -1,0 +1,11 @@
+{
+    "name": "openrender-prompt",
+    "fancyname": "OpenRender Prompt Renderer",
+    "description": "The prompt renderer for OpenRender",
+    "author": "Cole Bohte",
+    "dependencies": [],
+    "version": "1.00",
+    "minosversion": "0.1.0.3439",
+    "installinstructions": "",
+    "alias": {}
+}
