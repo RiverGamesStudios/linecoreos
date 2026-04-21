@@ -14,6 +14,7 @@
 <body>
 
     <!-- TOP STATUS BAR -->
+     <!--
     <div class="topbar">
         <div class="topbar-left">
             <span>LineCoreOS v0.1.0.3177</span>
@@ -26,6 +27,7 @@
             <span id="clock">--:--:--</span>
         </div>
     </div>
+    -->
 
     <!-- NAV -->
     <nav>
@@ -40,9 +42,9 @@
     </nav>
 
     <main>
-        <div class="section" style="margin-top: 56px;">
             <div class="section-bar">
-                <span class="tab-link on" data-tab="downloads-list">DOWNLOADS</span>
+                <span class="tab-link" data-tab="x86_64-downloads">[NEW] x86(_64)</span>
+                <span class="tab-link on" data-tab="downloads-list">Turbowarp</span>
             </div>
 
             <div id="downloads-list" class="tab-content active">
@@ -58,6 +60,13 @@
                     </thead>
                     <tbody>
                         <tr>
+                            <td class="col-name">Source</td>
+                            <td class="col-tag">Source Code</td>
+                            <td class="col-ver"></td>
+                            <td class="col-desc">The rolling source code for LineCoreOS for Turbowarp.</td>
+                            <td style="text-align:right"><a href="https://github.com/RiverGamesStudios/linecoreos" class="btn">GitHub Repository</a></td>
+                        </tr>
+                        <tr>
                             <td class="col-name">v0.1.0.3177</td>
                             <td class="col-tag">prerelease</td>
                             <td class="col-ver">2025-02-17</td>
@@ -67,29 +76,74 @@
                     </tbody>
                 </table>
             </div>
+
+            <div id="x86_64-downloads" class="tab-content">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>VERSION</td>
+                            <td>STATUS</td>
+                            <td>RELEASE DATE</td>
+                            <td>DESCRIPTION</td>
+                            <td style="text-align:right">DOWNLOAD</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-name">Source</td>
+                            <td class="col-tag">Source Code</td>
+                            <td class="col-ver"></td>
+                            <td class="col-desc">The rolling source code for LineCoreOS for x86(_64).</td>
+                            <td style="text-align:right"><a href="https://github.com/RiverGamesStudios/linekernel" class="btn">GitHub Repository</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+                
+            
         </div>
 
         <!-- FOOTER -->
         <footer>
             <div class="footer-left">
                 <span>LineCoreOS -- Source Available</span>
-                <span>(c) 2025 LineCoreOS Project</span>
+                <span>(c) 2025-2026 River Games Studios</span>
             </div>
             <div>
                 <a href="https://github.com/rivergamesstudios/linecoreos">GitHub</a>
                 <a href="#">Docs</a>
-                <a href="#">License</a>
+                <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">License</a>
             </div>
         </footer>
     </main>
 
     <script>
         function tick() {
-            document.getElementById('clock').textContent =
-                new Date().toTimeString().slice(0, 8);
+            const clockElement = document.getElementById('clock');
+            if (clockElement) {
+                clockElement.textContent = new Date().toTimeString().slice(0, 8);
+            }
         }
         tick();
         setInterval(tick, 1000);
+
+        // Tab switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tab-link').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Remove 'on' class from all tabs
+                    document.querySelectorAll('.tab-link').forEach(t => t.classList.remove('on'));
+                    // Add 'on' class to clicked tab
+                    this.classList.add('on');
+
+                    // Remove 'active' class from all tab contents
+                    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                    // Add 'active' class to corresponding content
+                    const tabId = this.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+        });
     </script>
 
 </body>
