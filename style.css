@@ -471,11 +471,13 @@ tbody td:last-child {
     line-height: 1.6;
 }
 
-.step code {
-    display: block;
+code {
     margin-top: 0.4rem;
     color: #999;
     font-size: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem;
+    border-radius: 0.2rem;
 }
 
 /* ── PHILOSOPHY ── */
